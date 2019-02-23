@@ -11,14 +11,12 @@ const rockDiv = document.getElementById("rock");
 const paperDiv = document.getElementById("paper");
 const scissorsDiv = document.getElementById("scissors");
 
-
 // Generating computer choice at random
 const getComputerChoice = () => {
   const choiceList = ["rock", "paper", "scissors"];
   const randomNumber = Math.floor(Math.random()*3);
   return (choiceList[randomNumber]);
 };
-
 
 // Convert lowercase choice to uppercase
 const convertToUp = (word) => {
@@ -34,13 +32,11 @@ const convertToUp = (word) => {
       break;
   }
 };
-
-
 // Output for user win
 const win = (userChoice, computerChoice) => {
   userScore++;
   userScoreSpan.innerHTML = userScore;
-  const randomWin = ["beats", "smashes", "destroys", "obliterates"];
+  const randomWin = ["beats", "smashes", "destroys", "crushes"];
   const randomNumber = Math.floor(Math.random() * 4);
   const winEmojis = ["😁", "💃🏽", "👏🏽", "😅", "😎", "🙌🏽"]
   const randomNumberEmoji = Math.floor(Math.random() * 6);
@@ -50,12 +46,11 @@ const win = (userChoice, computerChoice) => {
   document.getElementById(userChoice).classList.add('win-border')
   setTimeout(() => document.getElementById(userChoice).classList.remove('win-border'), 600);
 };
-
 // Output for user lose / computer win
 const lose = (userChoice, computerChoice) => {
   computerScore++;
   computerScoreSpan.innerHTML = computerScore;
-  const randomWin = ["beats", "smashes", "destroys", "obliterates"];
+  const randomWin = ["beats", "smashes", "destroys", "crushes"];
   const randomNumber = Math.floor(Math.random() * 4);
   const loseEmojis = ["😩", "😾", "💩", "😭", "😡", "🤨", "🤦🏽"]
   const randomNumberEmoji = Math.floor(Math.random() * 7);
@@ -75,9 +70,6 @@ const tie = (userChoice, computerChoice) => {
   document.getElementById(userChoice).classList.add('tie-border');
   setTimeout(() => document.getElementById(userChoice).classList.remove('tie-border'), 600);
 };
-
-
-
 
 // Comparing computerChoice and userChoice
 const game = (userChoice) => {
@@ -104,7 +96,6 @@ const game = (userChoice) => {
   }
 
 };
-
 
 const resetScores = () => {
   computerScore = 0;
